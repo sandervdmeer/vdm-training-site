@@ -1,0 +1,36 @@
+# Netlify-configuratie voor VDM Training
+# Netlify draait build.py en zet de map site/ online.
+
+[build]
+  command = "python3 build.py"
+  publish = "site"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"
+
+# Beveiliging en privacy voor alle pagina's
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# CSS, JS en afbeeldingen een week cachen
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Nette URL's zonder .html (bijv. /aanbod) werken automatisch via Netlify Pretty URLs.
+# Veelgebruikte alternatieve adressen doorsturen:
+[[redirects]]
+  from = "/contact"
+  to = "/intake"
+  status = 301
+
+[[redirects]]
+  from = "/scan"
+  to = "/volhoudscan"
+  status = 301
