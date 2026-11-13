@@ -10,5 +10,4 @@ Statische site met meerdere pagina's. Geen frameworks.
 ## Nog in te vullen (zoek op `TODO`)
 - Prijzen voor online coaching en personal training (`src/pages/aanbod.html`)
 - Formulier-endpoint voor de intake en de scan (`data-endpoint=""`)
-- Naam, certificering en portretfoto (`src/pages/over-mij.html`)
 - Instagram-link, definitief logo
