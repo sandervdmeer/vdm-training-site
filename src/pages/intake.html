@@ -1,0 +1,93 @@
+<!--meta
+title: Plan een gratis intake · VDM Training
+description: Plan een gratis intake van 30 minuten in Rijswijk of via video. Vrijblijvend, met een persoonlijk voorstel.
+nav: contact
+-->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Gratis · 30 minuten · vrijblijvend</span>
+        <h1 class="display">Plan je<br><span class="text-gradient">intake.</span></h1>
+        <p class="lead">Vul het formulier in. Ik neem binnen één werkdag contact met je op om een moment te prikken.</p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="container contact">
+        <div class="card">
+          <!-- LET OP: zet hieronder in data-endpoint de URL van je formulierdienst (Formspree/Tally/Make). -->
+          <form class="form" data-validate data-endpoint="" data-success="intake-success" novalidate>
+            <div class="grid grid-2">
+              <div class="field">
+                <label for="name">Naam <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="name" name="naam" autocomplete="name" required aria-describedby="name-err">
+                <span class="error-msg" id="name-err">Vul je naam in.</span>
+              </div>
+              <div class="field">
+                <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-err">
+                <span class="error-msg" id="email-err">Vul een geldig e-mailadres in, bijvoorbeeld naam@bedrijf.nl.</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="phone">Telefoon <span class="hint">(optioneel, als je liever gebeld wordt)</span></label>
+              <input class="input" id="phone" name="telefoon" type="tel" autocomplete="tel" inputmode="tel">
+            </div>
+            <fieldset class="field">
+              <legend>Waar heb je interesse in?</legend>
+              <div class="choice-row">
+                <label class="choice"><input type="radio" name="vorm" value="hybride" checked><span>Hybride</span></label>
+                <label class="choice"><input type="radio" name="vorm" value="online"><span>Online</span></label>
+                <label class="choice"><input type="radio" name="vorm" value="personal"><span>Personal training</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="field">
+              <legend>Waar wil je de intake?</legend>
+              <div class="choice-row">
+                <label class="choice"><input type="radio" name="locatie" value="rijswijk" checked><span>In Rijswijk</span></label>
+                <label class="choice"><input type="radio" name="locatie" value="video"><span>Via video</span></label>
+                <label class="choice"><input type="radio" name="locatie" value="maakt-niet-uit"><span>Maakt niet uit</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="goal">Wat wil je bereiken, en waar ging het eerder mis? <span class="hint">(optioneel)</span></label>
+              <textarea class="textarea" id="goal" name="doel" placeholder="Bijvoorbeeld: 10 kilo kwijt en weer energie. Ik haak steeds af in drukke weken."></textarea>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Verstuur aanvraag <span class="arrow" aria-hidden="true">→</span></button>
+            <p class="muted" style="font-size:13px">Je gegevens gebruik ik alleen om contact met je op te nemen.</p>
+          </form>
+          <div class="form-success" id="intake-success" role="status">
+            <span class="tag">Aanvraag ontvangen</span>
+            <h2 class="h3 mt-m">Dank je. Ik neem binnen één werkdag contact op.</h2>
+            <p class="muted mt-s">Tip: doe in de tussentijd de Volhoudscan. Dan weten we in de intake meteen waar we moeten beginnen.</p>
+            <a class="btn btn-ghost mt-m" href="volhoudscan.html">Doe de Volhoudscan <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <div class="side-stack">
+          <div class="card">
+            <h2 class="h3">Wat je kunt verwachten</h2>
+            <ul class="info-list mt-m">
+              <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7.5"/><path d="M10 6v4l2.5 2"/></svg></span><div><b>30 minuten</b><span>Over je doel, je agenda en wat eerder misging.</span></div></li>
+              <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3h7l3 3v11H5z"/><path d="M8 10h5M8 13h5"/></svg></span><div><b>Voorstel op maat</b><span>Binnen 2 werkdagen, met de prijs erbij.</span></div></li>
+              <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10.5l4 4 8-9"/></svg></span><div><b>Geen verplichting</b><span>Jij beslist. Ik bel niet na.</span></div></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2 class="h3">Locatie</h2>
+            <ul class="info-list mt-m">
+              <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 18s6-5.2 6-10a6 6 0 10-12 0c0 4.8 6 10 6 10z"/><circle cx="10" cy="8" r="2"/></svg></span>
+                <!-- TODO: exact adres invullen -->
+                <div><b>Plaspoelpolder, Rijswijk</b><span>Exact adres ontvang je bij de bevestiging.</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Voorselectie vanuit aanbod-pagina (?vorm=online)
+      (function () {
+        var v = new URLSearchParams(location.search).get('vorm');
+        var el = v && document.querySelector('input[name="vorm"][value="' + v + '"]');
+        if (el) el.checked = true;
+      })();
+    </script>

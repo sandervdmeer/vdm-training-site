@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#0F1115">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/main.js" defer></script>{{scripts}}
+</head>
+<body>
+  <a class="skip-link" href="#main">Naar de inhoud</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-pill" aria-label="Hoofdmenu">
+        <a class="logo" href="index.html" aria-label="VDM Training, naar de homepage">
+          <svg viewBox="0 0 172 32" aria-hidden="true">
+            <rect x="0" y="4" width="4" height="24" rx="1" fill="#C5A059"/>
+            <rect x="7" y="4" width="4" height="24" rx="1" fill="#C5A059"/>
+            <rect x="14" y="4" width="4" height="24" rx="1" fill="#C5A059"/>
+            <text x="27" y="23" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5" fill="#FAFAFA">VDM</text>
+            <text x="80" y="21" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" letter-spacing="2.4" fill="#8A92A0">TRAINING</text>
+          </svg>
+        </a>
+        <ul class="nav-links">
+          {{nav}}
+        </ul>
+        <div class="nav-actions">
+          <a class="btn btn-light btn-sm" href="intake.html">Plan intake</a>
+          <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu openen">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h12M4 13h12"/></svg>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu">
+        {{nav_mobile}}
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+{{content}}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <svg viewBox="0 0 172 32" style="height:24px;width:auto" aria-hidden="true">
+            <rect x="0" y="4" width="4" height="24" rx="1" fill="#C5A059"/><rect x="7" y="4" width="4" height="24" rx="1" fill="#C5A059"/><rect x="14" y="4" width="4" height="24" rx="1" fill="#C5A059"/>
+            <text x="27" y="23" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#FAFAFA">VDM</text>
+            <text x="80" y="21" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2.4" fill="#8A92A0">TRAINING</text>
+          </svg>
+          <p class="mt-m" style="max-width:36ch">Personal training en online coaching voor professionals met een volle agenda. Systems over motivation.</p>
+        </div>
+        <div>
+          <h4>Pagina's</h4>
+          <ul>
+            <li><a href="aanbod.html">Aanbod & prijzen</a></li>
+            <li><a href="volhoudscan.html">Volhoudscan</a></li>
+            <li><a href="over-mij.html">Over mij</a></li>
+            <li><a href="faq.html">Veelgestelde vragen</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="intake.html">Plan een gratis intake</a></li>
+            <li><span style="display:inline-block;padding:6px 0">Plaspoelpolder, Rijswijk</span></li>
+            <!-- TODO: Instagram-link toevoegen -->
+            <li><a href="https://instagram.com/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VDM Training</span>
+        <span>Systems over motivation</span>
+      </div>
+    </div>
+  </footer>
+
+  {{float}}
+</body>
+</html>
